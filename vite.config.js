@@ -1,16 +1,112 @@
-import { defineConfig } from "vite";
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>XI F-3 | SMAN 9 Kota Jambi</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f9ff}
+header{background:#2196f3;color:white;padding:15px}
+nav a{color:white;margin:0 10px;text-decoration:none;font-weight:bold}
+section{padding:20px}
+.card{background:white;padding:15px;border-radius:10px;margin-bottom:15px}
+button{padding:8px 15px;border:none;border-radius:8px;background:#2196f3;color:white}
+input{padding:8px;width:100%;margin:5px 0}
+.hidden{display:none}
+</style>
+</head>
+<body>
 
-// https://vitejs.dev/config/
-export default defineConfig(async ({ command, mode }) => {
-  return {
-    build: {
-      outDir: "deploy/_site",
-      rollupOptions: {
-        input: {
-          main: 'index.html',
-          404: '404.html',
-        },
-      }
-    }
-  }
-});
+<header>
+<h2>Website Kelas XI F-3</h2>
+<nav>
+<a href="#" onclick="show('home')">Beranda</a>
+<a href="#" onclick="show('siswa')">Siswa</a>
+<a href="#" onclick="show('struktur')">Struktur</a>
+<a href="#" onclick="show('jadwal')">Jadwal</a>
+<a href="#" onclick="show('galeri')">Galeri</a>
+<a href="#" onclick="show('login')">Admin</a>
+</nav>
+</header>
+
+<section id="home" class="card">
+<h3>Selamat Datang</h3>
+<p>Website resmi kelas XI F-3 SMAN 9 Kota Jambi</p>
+</section>
+
+<section id="siswa" class="card hidden">
+<h3>Daftar Siswa</h3>
+<ol>
+<li>Juliani Evriyasari</li>
+<li>Dinda Amelia Putri</li>
+<li>Mutiara Naomi Hutabarat</li>
+<li>Zhafira Nabila Dyta</li>
+<li>Syakira Alifa Windari</li>
+<li>Qeyza Aurellia Ramiel</li>
+<li>Marsyahlia Az Zahra</li>
+<li>Dimas Abriansyah</li>
+<li>Mamik Tegaswati</li>
+<li>Diana Ruddy Safitri</li>
+<li>Rydho Akbar</li>
+<li>Anggun Khairun Nisa</li>
+<li>Bagas Saputra</li>
+<li>Annisa Rizki Kurnia</li>
+<li>M. Juliantoro</li>
+<li>Ferdinan Tua Mandalahi</li>
+<li>Sesi Putriani</li>
+<li>Almiranda</li>
+<li>Syafira Julyani</li>
+<li>Almiera Deti R</li>
+<li>Ridho Putra Manurung</li>
+<li>Salsabila Ratu Zabrina</li>
+<li>Nathisa Syafira Al Faiza</li>
+<li>Dwi Nur Sawaliah</li>
+<li>M. Fajar Winarto</li>
+<li>Nur Layla</li>
+<li>Aprizal</li>
+<li>Ahmad Royan Saputra</li>
+<li>Trivena Anju Turnip</li>
+<li>Nabila Auliya Wijaya K</li>
+<li>Evelyn Putri Santoso</li>
+</ol>
+</section>
+
+<section id="struktur" class="card hidden">
+<h3>Struktur Kelas</h3>
+<p>(Silakan diedit oleh admin)</p>
+</section>
+
+<section id="jadwal" class="card hidden">
+<h3>Jadwal Pelajaran</h3>
+<p>(Akan diisi)</p>
+</section>
+
+<section id="galeri" class="card hidden">
+<h3>Galeri Foto</h3>
+<input type="file">
+</section>
+
+<section id="login" class="card hidden">
+<h3>Login Admin</h3>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p id="msg"></p>
+</section>
+
+<script>
+function show(id){
+document.querySelectorAll('section').forEach(s=>s.classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+}
+function login(){
+if(user.value=="admin" && pass.value=="xif3sman9"){
+alert("Login berhasil!");
+}else{
+msg.innerText="Login gagal";
+}
+}
+</script>
+
+</body>
+</html>
+  
